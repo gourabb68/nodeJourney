@@ -1,0 +1,16 @@
+{
+  "name": "node_mongodb_modulewise",
+  "version": "1.0.0",
+  "description": "",
+  "main": "\t",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index"
+  },
+  "author": "\"Gourab Banerjee\"",
+  "license": "ISC",
+  "dependencies": {
+    "assert": "^1.4.1",
+    "mongodb": "^3.0.10"
+  }
+}
