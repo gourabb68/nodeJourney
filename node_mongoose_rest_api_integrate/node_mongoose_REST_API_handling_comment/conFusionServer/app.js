@@ -35,8 +35,8 @@ app.use('/', indexRouter);
 app.use('/users', usersRouter);
 //adding the route
 app.use('/dishes', dishesRouter);
-app.use('/promo', promoRouter);
-app.use('/leader', leaderRouter);
+app.use('/promotions', promoRouter);
+app.use('/leaders', leaderRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
