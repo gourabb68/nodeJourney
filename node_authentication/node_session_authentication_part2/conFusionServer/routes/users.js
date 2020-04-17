@@ -14,7 +14,7 @@ router.post('/signup', (req, res, next) => {
   .then((user) => {
     if(user != null) {
       var err = new Error('User ' + req.body.username + ' already exists!');
-      err.status = 403;
+      err.statusCode = 403;
       next(err);
     }
     else {
