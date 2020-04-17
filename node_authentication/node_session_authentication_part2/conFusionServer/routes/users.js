@@ -56,7 +56,7 @@ router.post('/login', (req, res, next) => {
       }
       else if (user.password !== password) {
         var err = new Error('Your password is incorrect!');
-        err.status = 403;
+        err.statusCode = 403;
         return next(err);
       }
       else if (user.username === username && user.password === password) {
