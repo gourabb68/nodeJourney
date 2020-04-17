@@ -51,7 +51,7 @@ router.post('/login', (req, res, next) => {
     .then((user) => {
       if (user === null) {
         var err = new Error('User ' + username + ' does not exist!');
-        err.status = 403;
+        err.statusCode = 403;
         return next(err);
       }
       else if (user.password !== password) {
