@@ -1,0 +1,127 @@
+{
+  "openapi": "3.0.0",
+  "info": {
+    "version": "1.0.0",
+    "title": "Node js Full Stack Project",
+    "description": "Node js backend support with MongoDB",
+    "license": {
+      "name": "GOURAB",
+      "url": "https://opensource.org/licenses/MIT"
+    }
+  },
+  "servers": [
+    {
+      "url": "http://localhost:3000",
+      "description": "Development"
+    }
+  ],
+  "security":{
+    "type": "array",
+     "items": {
+       "BasicAuth": []
+     }
+  },
+  "paths": {
+    "/dishes": {
+      "get": {
+        "tags": [
+          "DISHES"
+        ],
+        "summary": "list of dishes",
+        "description": "Get a list Dishes",
+        "security": [],
+        "responses": {
+          "200": {
+            "description": "list of dishes",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object",
+                  "properties": {
+                    "dishes": {
+                      "type": "array",
+                      "items": {
+                        "type": "object",
+                        "properties": {
+                          "name": {
+                            "type": "string",
+                            "example": "gourab"
+                          },
+                          "image": {
+                            "type": "string",
+                            "example": "images/uthappizza.png"
+                          },
+                          "category": {
+                            "type": "string",
+                            "example": "mains"
+                          },
+                          "label": {
+                            "type": "string",
+                            "example": "hot"
+                          },
+                          "price": {
+                            "type": "string",
+                            "example": "4.99"
+                          },
+                          "featured": {
+                            "type": "string",
+                            "example": "true"
+                          },
+                          "description": {
+                            "type": "string",
+                            "example": "dishes description"
+                          },
+                          "comments": {
+                            "type": "array",
+                            "items": {
+                              "type": "object",
+                              "properties": {
+                                "rating": {
+                                  "type": "integer",
+                                  "example": "4"
+                                },
+                                "comment": {
+                                  "type": "string",
+                                  "example": "nice"
+                                },
+                                "author": {
+                                  "type": "string",
+                                  "example": "gourab banerjee"
+                                },
+                                "date": {
+                                  "type": "string",
+                                  "example": "20/05/2020"
+                                }
+                              }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/dishes/{dishId}": {
+      "get": {
+        "tags": [
+          "DISHES"
+        ],
+        "summary": "specific dishes",
+        "description": "Get a specific Dishe"
+      }
+    }
+  },
+  "components":{
+    "securitySchemes":{
+      "BasicAuth":{
+     "type": "http",
+     "scheme": "basic"
+   }
+  }
+  }
+}
